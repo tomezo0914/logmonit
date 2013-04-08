@@ -39,10 +39,10 @@ if ('development' == app.get('env')) {
 }
 
 // watch log file
-var log_prefix = 'development.log';
+var log_prefix = 'blog_error.log';
 var reg = new RegExp('^' + log_prefix + '$');
 var log_file = null;
-var log_dir = '/home/toyotome/work/sp/log';
+var log_dir = '/var/log/nginx';
 fs.readdir(log_dir, function(err, files) {
   for (var i = 0; i < files.length; i++) {
     if (reg.test(files[i])) {
@@ -55,7 +55,7 @@ fs.readdir(log_dir, function(err, files) {
     if (err) {
       throw err;
     }
-  
+
     fs.watchFile(log_file, { interval: 1000 }, function (cur, prev) {
       if (cur.size != prev.size) {
         var buf_size = 1024;
