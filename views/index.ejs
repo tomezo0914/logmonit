@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+      var server = '<%= server %>';
+      var port = <%= port %>;
+    </script>
+    <script src="/javascripts/client.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <h1><%= title %></h1>
+    </div>
+    <div id="log" style="height: 100%; width: 100%;"></div>
+    <div id="footer"></div>
+  </body>
+</html>
